@@ -1,0 +1,10 @@
+git init intalizing and create .git hidden folder
+git log (log of comments of snapshots)
+git status ( shows the files are clean or not)
+git .add  ( store snapshots into memory)
+git commit -m "comment" ( stores snapshot into storage) 
+git Checkout 5 digit of hashcode and Master for current ( go to the snapshot of selected situation)
+GIT REMOte -V (to check the sourse code   url coneetecd)
+git remote add origin {url} (add url )
+git remote -v
+git push origin master (push the repo) 

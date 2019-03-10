@@ -1,0 +1,197 @@
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git init
+Reinitialized existing Git repository in E:/SWABHAV REPOSITORY/.git/
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   HELLO.txt
+        new file:   desktop.ini
+
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git add .
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git commit -m "good bye"
+[master (root-commit) 3fc74a2] good bye
+ 2 files changed, 5 insertions(+)
+ create mode 100644 HELLO.txt
+ create mode 100644 desktop.ini
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git commit
+On branch master
+nothing to commit, working tree clean
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git add .
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git commit -m 'good bye'
+On branch master
+nothing to commit, working tree clean
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git log
+commit 3fc74a23c823985cb2af5beb02000fffb1ca9df2 (HEAD -> master)
+Author: Manish9797 <ukirdemanish9797@gmail.com>
+Date:   Sat Mar 9 22:27:43 2019 -0800
+
+    good bye
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git log
+commit 3fc74a23c823985cb2af5beb02000fffb1ca9df2 (HEAD -> master)
+Author: Manish9797 <ukirdemanish9797@gmail.com>
+Date:   Sat Mar 9 22:27:43 2019 -0800
+
+    good bye
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git add .
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git commit -m 'hello'
+[master a7796c1] hello
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git log
+commit a7796c16b25639c63775c4d30613170b8f308a0e (HEAD -> master)
+Author: Manish9797 <ukirdemanish9797@gmail.com>
+Date:   Sat Mar 9 22:30:29 2019 -0800
+
+    hello
+
+commit 3fc74a23c823985cb2af5beb02000fffb1ca9df2
+Author: Manish9797 <ukirdemanish9797@gmail.com>
+Date:   Sat Mar 9 22:27:43 2019 -0800
+
+    good bye
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git add .
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git commit -m 'how do you do'
+[master 2341e1e] how do you do
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git log
+commit 2341e1e4e14e881f5111b91ccefbeddec8d33ed6 (HEAD -> master)
+Author: Manish9797 <ukirdemanish9797@gmail.com>
+Date:   Sat Mar 9 22:32:02 2019 -0800
+
+    how do you do
+
+commit a7796c16b25639c63775c4d30613170b8f308a0e
+Author: Manish9797 <ukirdemanish9797@gmail.com>
+Date:   Sat Mar 9 22:30:29 2019 -0800
+
+    hello
+
+commit 3fc74a23c823985cb2af5beb02000fffb1ca9df2
+Author: Manish9797 <ukirdemanish9797@gmail.com>
+Date:   Sat Mar 9 22:27:43 2019 -0800
+
+    good bye
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git checkout 2341e
+Note: checking out '2341e'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 2341e1e how do you do
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY ((2341e1e...))
+$ git checkout master
+Switched to branch 'master'
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git log
+commit 2341e1e4e14e881f5111b91ccefbeddec8d33ed6 (HEAD -> master)
+Author: Manish9797 <ukirdemanish9797@gmail.com>
+Date:   Sat Mar 9 22:32:02 2019 -0800
+
+    how do you do
+
+commit a7796c16b25639c63775c4d30613170b8f308a0e
+Author: Manish9797 <ukirdemanish9797@gmail.com>
+Date:   Sat Mar 9 22:30:29 2019 -0800
+
+    hello
+
+commit 3fc74a23c823985cb2af5beb02000fffb1ca9df2
+Author: Manish9797 <ukirdemanish9797@gmail.com>
+Date:   Sat Mar 9 22:27:43 2019 -0800
+
+    good bye
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY (master)
+$ git checkout 3fc74
+Note: checking out '3fc74'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 3fc74a2 good bye
+
+MANISH@DESKTOP-4KLUNIN MINGW64 /e/SWABHAV REPOSITORY ((3fc74a2...))
+$ git log
