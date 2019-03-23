@@ -1,6 +1,5 @@
 package com.techlabs.Rectangle.TestRectangel;
 
-import java.lang.*;
 import com.techlabs.Rectangle.*;
 
 public class TestRectangel {
@@ -26,19 +25,16 @@ public class TestRectangel {
 
 	}
 
-	public static void printDetails(Rectangle r) {
-if(r!=null )
-{
-	
+	public static void printDetails(Rectangle rectangle) {
+		if (rectangle != null) {
 
-		System.out.println(r.getClass().getName());
-		System.out.println(r.hashCode());
-		System.out.println("height=" + r.getHeight());
-		System.out.println("width=" + r.getWidth());
-		System.out.println("colour=" + r.getColour());
-		System.out.println(r.calculateArea());
+			System.out.println(rectangle.getClass().getName());
+			System.out.println(rectangle.hashCode());
+			System.out.println("height=" + rectangle.getHeight());
+			System.out.println("width=" + rectangle.getWidth());
+			System.out.println("colour=" + rectangle.getColour());
+			System.out.println(rectangle.calculateArea());
 
+		}
 	}
-else {}
-}
 }
