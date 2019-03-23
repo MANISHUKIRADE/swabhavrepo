@@ -11,8 +11,13 @@ public class SplitDemo {
 
 		String[] sr2 = sr1[0].split("//");
 
+		
 		System.out.println(sr2[1]);
-		System.out.println(sr1[1]);
+		
+		
+ 
+		
+	System.out.println(sr1[1]); 
 
-	}
+}
 }
