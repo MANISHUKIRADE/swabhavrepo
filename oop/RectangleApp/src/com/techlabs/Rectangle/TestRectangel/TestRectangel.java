@@ -27,6 +27,10 @@ public class TestRectangel {
 	}
 
 	public static void printDetails(Rectangle r) {
+if(r!=null )
+{
+	
+
 		System.out.println(r.getClass().getName());
 		System.out.println(r.hashCode());
 		System.out.println("height=" + r.getHeight());
@@ -35,5 +39,6 @@ public class TestRectangel {
 		System.out.println(r.calculateArea());
 
 	}
-
+else {}
+}
 }

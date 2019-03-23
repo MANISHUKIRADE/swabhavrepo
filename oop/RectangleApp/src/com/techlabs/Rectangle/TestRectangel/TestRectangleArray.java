@@ -19,16 +19,14 @@ public class TestRectangleArray {
 
 		rect[0] = smallRectangle;
 		rect[1] = bigRectangle;
-		try {
+		
 			for (Rectangle r : rect) {
-
+                   
 				TestRectangel.printDetails(r);
 
 			}
-		} catch ( NullPointerException e) {
-			System.out.println(e);
-		}
+		} 
+		
 
 	}
 
-}
