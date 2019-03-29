@@ -1,6 +1,6 @@
-package demo;
+package oddeventest;
 
-public class demo {
+public class OddEvenTest {
 	public static void main(String[] args) {
 
 		int oddarray[] = new int[50];
@@ -9,12 +9,13 @@ public class demo {
 		int evencount = 0;
 		int oddcount = 0;
 
-		for (int i = 1; i <= 100; i++) {
-			if (i % 2 == 0) {
-				evenarray[evencount] = i;
+		for (int count = 1; count <= 100; count++) {
+
+			if (count % 2 == 0) {
+				evenarray[evencount] = count;
 				evencount++;
 			} else {
-				oddarray[oddcount] = i;
+				oddarray[oddcount] = count;
 				oddcount++;
 			}
 
