@@ -1,5 +1,4 @@
-package com.techlabs.Rectangle.TestRectangel;
-import com.techlabs.Rectangle.*;
+package com.techlabs.Rectangle.testrectangel;
 public class TestRectangel {
 	
 	public static void main (String args[])
