@@ -4,17 +4,17 @@ import com.techlabs.rectangleconstructor.*;
 
 public class TestRectangle {
 	public static void main(String[] args) {
-		Rectangle myrect = new Rectangle(1.3, 2.4, BorderType.DOTTED);
-         Rectangle newrect= new Rectangle(1.2,3.5);
+		Rectangle rect1 = new Rectangle(1.3, 2.4, BorderType.DOTTED);
+         Rectangle rect2= new Rectangle(1.2,3.5);
          
          
-         System.out.println(myrect.getHeight());
-         System.out.println(myrect.getWidth());
-         System.out.println(myrect.getBorder());
+         System.out.println(rect1.getHeight());
+         System.out.println(rect1.getWidth());
+         System.out.println(rect1.getBorder());
          System.out.println();
-         System.out.println(newrect.getHeight());
-         System.out.println(newrect.getWidth());
-         System.out.println(newrect.getBorder());
+         System.out.println(rect2.getHeight());
+         System.out.println(rect2.getWidth());
+         System.out.println(rect2.getBorder());
          
          
          
