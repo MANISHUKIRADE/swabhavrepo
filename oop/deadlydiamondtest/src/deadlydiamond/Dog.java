@@ -33,13 +33,13 @@ public class Dog implements Animal,Robo  {
 	@Override
 	public void moving() {
 		// TODO Auto-generated method stub
-		Animal.super.moving();
+		Robo.super.moving();
 	}
 
 	@Override
 	public void noise() {
 		// TODO Auto-generated method stub
-		Animal.super.noise();
+		Robo.super.noise();
 	}
 
 	
