@@ -12,10 +12,14 @@ public class TestCollection {
 		cart.add(new LineItem("mbilecover", 200, 1));
 		cart.add("mahesh");
 		cart.add(123);
+		LineItem lineitem = new LineItem("pen", 100, 5);
 		
+		cart.set(1,lineitem );
+		 cart.remove(2);
+		 cart.clear();
 		
 		for(Object obj : cart) {
-		LineItem lineitem = (LineItem) obj;
+		LineItem lineitem1 = (LineItem) obj;
 		System.out.println("product"+lineitem.getProduct()+" price="+lineitem.getPrice()+" quantity="+lineitem.getQuantity()+"total cost"+lineitem.calculateTotalCost());
 	}
 	

@@ -1,10 +1,11 @@
-package com.techlabs.propertyreder;
+package com.techlabs.colllection.duplicatedataavoidance;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
-import java.io.*;
 
 public class PropertyReader {
 	public void getProprtyfile(String filename) throws Throwable {
@@ -34,10 +35,5 @@ public class PropertyReader {
 		
 
 	}
-	
-	/*public Properties getFileProperty(String filename) {
-		FileReader filereader = new FileReader(filename);
-		Properties fileproperties = new Properties();
-		return fileproperties;*/
 
 }
