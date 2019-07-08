@@ -6,7 +6,7 @@ export class Account {
         this.accountNumber = accountNumber;
         this.accont_holder_name = accont_holder_name;
         this.balance = balance;
-    }
+    } 
     public getAcoountHolderdetail = ():void =>{
        let account_holdr_data_string:string =`account Number = ${this.accountNumber}
         acoount holder Name: =${this.accont_holder_name}
