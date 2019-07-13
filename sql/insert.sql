@@ -1,0 +1,1 @@
+Insert into studentDB values (1,'manish',7.6);

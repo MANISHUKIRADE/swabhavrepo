@@ -1,0 +1,17 @@
+<section>
+  <p>{{student["name"]}}</p>
+  <p [innerHtml]='student.name' [style.font-size]='"100px"'></p>
+  <p [innerHtml]='"foo"'></p>
+  <img [src]='"assets/IMG-20190214-WA0123.jpg"' style="height: 100px; widows: 100px;">
+<br>
+<br>
+<br>
+  <button (click)=printDetails($event)>Show List</button>
+  <br>
+  <br>
+  <ul>
+<br>
+    <li *ngFor="let stud of students"> {{stud.name}} {{stud.id}} </li> <br>
+  </ul>
+
+</section>

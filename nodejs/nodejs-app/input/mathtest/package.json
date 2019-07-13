@@ -1,0 +1,20 @@
+{
+  "name": "mathtest",
+  "version": "1.0.0",
+  "main": "async.js",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chi": "^0.0.10",
+    "promise": "^8.0.3",
+    "q": "^1.5.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
