@@ -3,10 +3,11 @@ require('console-sync')
 
 module.exports = class game {
 
-    constructor(board, player1, player2) {
+    constructor(board, player1, player2, gameanlyser) {
         this.board = board
         this.player1 = player1
         this.player2 = player2
+        this.gameanlyser = gameanlyser
     }
     get Board() {
         return this.board
@@ -45,7 +46,12 @@ module.exports = class game {
                 }
             } else console.log("game End")
 
-
+            var result = this.gameanlyser.calculateResult()
+            if (result.win == true) {
+                console.log(this.board.getBoardMarks())
+                console.log(result.winner + "   win")
+                break;
+            }
             console.log(this.board.getBoardMarks())
         }
     }

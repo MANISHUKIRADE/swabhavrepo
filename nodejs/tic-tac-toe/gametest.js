@@ -2,6 +2,7 @@ const Cell = require('./cell.js')
 const Board = require('./board.js')
 const Player = require('./player.js')
 const Game = require('./game.js')
+const Analyser = require('./boardanalyser')
 let cell = new Array(2);
 for (var index = 0; index < 3; index++) {
     cell[index] = new Array(2)
@@ -15,5 +16,7 @@ let board = new Board(cell)
 console.log(board.getBoardMarks())
 let player1 = new Player('manish','X')
 let player2 = new Player('ratnesh','o')
-let game = new Game(board,player1,player2)
+let boardanalyser = new Analyser(board,player1,player2)
+
+let game = new Game(board,player1,player2,boardanalyser)
 game.gameStart();
