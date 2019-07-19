@@ -1,0 +1,28 @@
+<section class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+
+
+
+
+
+      <div class="text-center h2 well  " style="background-color: cadetblue; font-size: 40px; "> {{product.productName}}
+      </div>
+    </div>
+    <div> <img src="{{product.imageUrl}}" style="width: 100px; height: 100px;"></div><br> <br>
+
+    <div style="font-size: 30px"> {{product.description}}</div>
+
+    <div style="font-size: 20px">Product Code: {{product.productCode}}</div>
+    <div style="font-size: 20px">Available From: {{product.releaseDate}}</div>
+    <div style="font-size: 20px">Price: {{product.price | currency }}</div>
+    <div style="font-size: 20px">Rating: <span style="font-size: 25px">
+        <star-button [rating]='product.starRating'></star-button>
+      </span>
+    </div> <button type="button" (click)="backToList()" class="btn btn-lg btn-warning">Back</button>
+
+
+  </div>
+
+
+</section>

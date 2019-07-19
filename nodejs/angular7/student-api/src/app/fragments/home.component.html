@@ -1,0 +1,32 @@
+<section>
+    <h1>{{errormesage}}</h1>
+    <table style="font-size: 20px;" class="text-center table table-striped table-bordered table-hover ">
+  
+        <thead>
+            <tr>
+                <td>Delete</td>
+                <td>Edit</td>
+                <td>Name</td>
+                <td>Rollno</td>
+                <td>Email</td>
+                <td>Gender</td>
+                <td>age</td>
+                <td>Date</td>
+            </tr>
+            
+        </thead>
+        <tr *ngFor="let student of studentList">
+            <td><button id="{{student.id}}" (click)="deleteStudent($event)"  class="btn-danger btn-md">Delete</button>
+            </td>
+            <td><button id="e{{student.id}}" (click)="editStudent($event)" class="btn-warning btn-md">Edit</button>
+            </td>
+            <td>{{student.name}}</td>
+            <td>{{student.rollNo}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.isMale | genderfilter }}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.date  }}</td>
+        </tr>
+    </table>
+  
+  </section>

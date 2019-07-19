@@ -1,11 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="text-center jumbotron container">
+<div class="text-center jumbotron container"   >
     
-    <h1 hidden>
+    <h1 >
             {{message | uppercase }}   
     </h1>
     <h1>{{22/7 | number: '1.1-2' }}</h1>
   <h1>{{(student ? student.name : 'Aniket')|uppercase  }}</h1> 
-  
-  <router-outlet></router-outlet>
+  <Toggle-button [textvalue]='"Toggle"' [state]='"0"' (changestate)='stateChangeHandler($event)' ></Toggle-button >
+  <br><br>
+        {{state}}
+        <br>
+        <star-button [rating]='"3.5"'></star-button>
+  </div>
   

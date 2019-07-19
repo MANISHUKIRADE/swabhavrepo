@@ -7,8 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     message:string
+    state:string
     constructor(){
         this.message = 'Nexsales'
-    }
+          
+      }
+      stateChangeHandler(e){
+           this.state=e;
+
+      }
     
 }

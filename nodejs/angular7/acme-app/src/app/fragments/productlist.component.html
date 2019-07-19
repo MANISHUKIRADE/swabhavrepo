@@ -1,0 +1,45 @@
+<section>
+
+  <div class="panel-body">
+
+    <div class="form-group">
+      <label for="inputfilterby name" class="col-sm-1 control-label">filterby name:</label>
+      <div class="col-sm-2">
+        <input type="text" [(ngModel)]='searchText' name="filterby name" id="inputfilterby name" class="form-control"
+          value="" required="required" pattern="" title="">
+      </div>
+    </div>
+    <br><br>
+  </div>
+  <table style="font-size: 20px;" class="text-center table table-striped table-bordered table-hover ">
+    <thead>
+      <td><button *ngIf='!imageshow' class="btn btn-primary primary" (click)='hideImage()'>Hide
+          Image</button>
+        <button *ngIf='imageshow' class="btn btn-primary primary" (click)='showImage()'>Show
+          Image</button>
+
+      </td>
+
+      <td>Product</td>
+      <td>Code</td>
+      <td>Available</td>
+      <td>Price</td>
+      <td>Rating</td>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of ProductList | filter: searchText ">
+        <td><img *ngIf='!imageshow' [src]='product.imageUrl' style="width: 50px; height: 50px;"></td>
+        <td> <a id='{{product.productId}}'
+            [routerLink]="['/productdetials', product.productId]">{{product.productName}}</a></td>
+        <td>{{product.productCode}}</td>
+        <td>{{product.releaseDate}}</td>
+        <td>{{product.price  | currency}}</td>
+        <td style="  font-size: 25px;">
+          <star-button [rating]='product.starRating'></star-button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</section>

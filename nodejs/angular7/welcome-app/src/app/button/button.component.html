@@ -1,0 +1,7 @@
+<div>
+    <span>
+        {{textvalue}}
+    </span>
+    <input  type="button" [value]="state" (click)='changeState()' [ngStyle]="{'background-color': state === 0 ? 'red' : 'green' }">
+
+</div>
