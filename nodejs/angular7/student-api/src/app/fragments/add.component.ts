@@ -29,6 +29,7 @@ export class AddStudent {
         console.log(student)
         this.service.addStudent(student).then((result)=>{
             console.log(result)
+            this.router.navigateByUrl('/home')
         })
         .catch((erore)=>{
             console.log(erore)
@@ -39,7 +40,7 @@ export class AddStudent {
        this.ismale=null
        this.email=null
        this.date=null
-       this.router.navigateByUrl('/home')
+       
 
     }
 }
