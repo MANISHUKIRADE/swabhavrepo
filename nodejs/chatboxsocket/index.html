@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+    <title>ChatBox</title>
+</head>
+
+<body>
+    <div id="content">
+        Enter User Name: <input type="text" id="username"> <button onclick="addUser()">Chat</button>
+
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script>
+        let socket = io();
+         let socketinform;
+         let username
+         console.log(socket)
+        function addUser() {
+             username = document.getElementById('username').value;
+            let string =
+                '<div id=messages></div>   <input id=mesg type=text> <button onclick=sendMessage()>send</button>'
+            document.getElementById("content").innerHTML = string;
+            console.log(socket)
+            socketinform = {
+                Socket: socket,
+                Socketid: socket.id,
+                user: username
+            }
+            socket.emit("useradded", socket)
+    
+
+        }
+        socket.on('connection',function(message){
+            onload(message)
+        })
+        socket.on('usersub', function (message) {
+            onload(messages) 
+        })
+
+        function onload(message) {
+            let tempstring = ''
+            for (i = 0; i < message.length; i++) {
+
+                tempstring = tempstring + '<br>' + message[i].user + " : " + message[i].msg;
+            }
+            document.getElementById('messages').innerHTML = tempstring
+        }
+        socket.on('connectionsuccess', function (messages) {
+            //       console.log(messages);
+            onload(messages)
+
+        })
+        socket.on('recivemessage', function (messages) {
+            //       console.log(messages)
+            onload(messages)
+        })
+
+        socket.on('broadcast', function (messages) {
+            //     console.log(messages)
+            onload(messages)
+        })
+        socket.on('usersub',function (message){
+            onload(message)
+        })
+        socket.emit('disconnect',socket.id)
+
+        function sendMessage() {
+            let input = document.getElementById('mesg').value;
+            socket.emit('sendmesg', {
+                sid: socket.id,
+                user: username,
+                msg: input
+                
+
+            })
+
+            document.getElementById('mesg').value = null;
+        }
+    
+
+    </script>
+</body>

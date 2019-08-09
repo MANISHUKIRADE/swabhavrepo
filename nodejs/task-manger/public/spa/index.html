@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<head>
+    <title>TaskManager</title>
+</head>
+
+<link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+
+<body ng-app='TaskApp'>
+    <div class="well-lg ">
+        <h1>Task Manager </h1>
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <a class="navbar-brand" href="#">Title</a>
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#!/login">Login</a>
+                </li>
+                <li>
+                    <a href="#!/register">Register</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+    <section ng-view></section>
+    <script src="./angular.js"></script>
+    <script src="./angular-route.js"></script>
+    <script>
+        let app = angular.module('TaskApp', ['ngRoute'])
+        app.config(['$routeProvider', function ($routeProvider) {
+            $routeProvider.when('/login', {
+                    templateUrl: "fragments/login.html",
+                    controller: "loginController"
+                })
+                .when('/register', {
+                    templateUrl: "fragments/register.html",
+                    controller: "registerController"
+                })
+                .when('/user/:id', {
+                    templateUrl: 'fragments/user.html',
+                    controller: 'userController'
+                })
+                .when('/user/:id/task',{
+                    templateUrl: 'fragments/task.html',
+                    controller:'taskController'
+                })
+        }])
+        app.factory('taskService', function ($q, $http, $window, $location) {
+            let obj = {};
+            obj.authenticateUser = function (username, password) {
+                let loginData = {
+                    username: username,
+                    password: password
+                }
+                return $q(function (resolve, reject) {
+
+                    $http({
+                        method: 'POST',
+                        url: 'http://localhost:9000/api/v1/authenticate/',
+                        data: loginData
+                    }).then(async function (response) {
+                        let data = await response.data;
+                        // console.log(data[0]._id)
+                        if (data.length == 0) {
+                            $window.alert('Invalid Crededntilas')
+                        } else {
+                            //data = await LogIntoUser(data[0]._id)
+
+
+                            // console.log(data)
+                            $location.path("/user/" + data[0]._id)
+                        }
+
+
+                    }).catch(function (error) {
+                        reject(error)
+                    })
+
+                })
+
+            }
+            obj.registerUser = function (user) {
+                return $q(function (resolve, response) {
+                        $http({
+                            method: 'POST',
+                            url: 'http://localhost:9000/api/v1/adduser/',
+                            data: user
+                        })
+                    }).then(function (response) {
+                        resolve('data Added Successfully')
+                    })
+                    .catch(function (error) {
+                        reject("some error ocuures")
+                    })
+            }
+            obj.userLogon = function (id) {
+                return $q(function (resolve, reject) {
+                    $http({
+                        method: 'GET',
+                        url: 'http://localhost:9000/api/v1/user/' + id,
+
+                    }).then(function (response) {
+                        //                           console.log(response)
+                        let data = response.data
+
+                        resolve(data)
+
+
+
+                    }).catch(function (error) {
+                        reject(error)
+                    })
+                })
+            }
+            return obj;
+        })
+        app.controller('loginController', function ($scope, $rootScope, taskService) {
+            $scope.username;
+            $scope.password;
+
+            $scope.login = function () {
+                let username = $scope.username;
+                let password = $scope.password;
+                taskService.authenticateUser(username, password)
+            }
+        })
+        app.controller('registerController', function ($scope, taskService) {
+            $scope.fname;
+            $scope.lname;
+            $scope.username;
+            $scope.password;
+            $scope.registerUser = function () {
+                let user = {
+                    name: {
+                        fname: $scope.fname,
+                        lname: $scope.lname
+                    },
+                    username: $scope.username,
+                    password: $scope.password
+                }
+                taskService.registerUser(user).then(function (result) {
+                    console.log(result)
+                }).catch(function (error) {
+                    console.log(error)
+                })
+            }
+
+        })
+        app.controller('userController', function ($scope, $routeParams, taskService, $location) {
+            let id = $routeParams.id;
+            //$scope.username= 'manish'
+            taskService.userLogon(id).then(async function (result) {
+                console.log(result[0])
+                $scope.name = result[0].name;
+                $scope.username = result[0].username
+                $scope.mobileno= result[0].mobileno
+                let id = result[0]._id
+                
+            })
+            $scope.taskPage = function () {
+                    $location.path('user/'+id+'/task/')
+                }
+            $scope.goToEdit= function(){
+               $location.path('/edituser/'+id)
+            }
+        })
+        app.controller('taskController',function(){
+            
+        })
+    </script>
+
+</body>

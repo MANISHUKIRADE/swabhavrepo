@@ -1,0 +1,36 @@
+<!doctype html>  
+<html lang="en">  
+    <head>
+        <title>webSocket</title>
+
+    </head>
+    <body>
+            <i class="far fa-frown fa-5x"></i>
+        <h1>Hello</h1>
+        <div id="future"></div>
+        <button onclick="sendHello()">Click</button>
+        <script src="https://kit.fontawesome.com/8557853e38.js"></script>
+         <script src="/jquery/dist/jquery.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>  
+                let socket = io.connect('http://localhost:4200/');
+                let userstring;
+                const socket1 = io('/my-namespace');
+
+                socket.on('connect', function() {
+                   socket.on('assign',function(data){
+                       console.log(data)
+                       socket.emit('join', ' client  '+data+'  connected');
+                   })
+                    
+                });
+                function sendHello(){
+                    socket.emit('helloMessage','Hello From Client')
+                }
+                socket.on('serverMessage',function(data){
+                    console.log(data)
+                })
+                </script>
+                
+    </body>
+</html>
