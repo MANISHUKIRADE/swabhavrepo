@@ -150,8 +150,8 @@ async function getTask(id) {
     data = dto.singleTaskConverter(data)
     return data;
 }
-async function addTask(id, tasktitle, taskdiscription, taskDate) {
-    let res = service.addUserTask(id, tasktitle, taskdiscription, taskDate);
+async function addTask(id, tasktitle, taskdiscription, taskDate,priority) {
+    let res = service.addUserTask(id, tasktitle, taskdiscription, taskDate,priority);
     return res
 }
 async function deleteTask(id) {
@@ -174,7 +174,12 @@ module.exports = class TaskController {
             let tasktitle = request.body.tasktitle
             let taskdiscription = request.body.taskdiscription
             let taskDate = request.body.taskDate
-            let res = addTask(id, tasktitle, taskdiscription, taskDate)
+            let priority = request.body.priority
+
+
+            
+            let res = addTask(id, tasktitle, taskdiscription, taskDate,priority )
+            
             response.send(res)
         })
         this.app.delete('/api/v1/users/:userid/deleteTask/:taskid/', async (request, response) => {
@@ -192,7 +197,7 @@ module.exports = class TaskController {
             let tasktitle = request.body.tasktitle;
             let taskdiscription = request.body.taskdiscription
             let taskDate = request.body.taskDate
-            let data = service.editUserTasks( tid, tasktitle, taskdiscription, taskDate)
+            let data = service.editUserTasks(tid, tasktitle, taskdiscription, taskDate)
             response.send(data)
         })
 

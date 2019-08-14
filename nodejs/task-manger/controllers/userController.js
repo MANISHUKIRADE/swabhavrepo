@@ -178,7 +178,7 @@ module.exports = class Usercontroller {
             let password = request.body.password;
             let username = request.body.username;
             let data = await service.getAutheticateUser(username,password)
-           // console.log(data)
+           //console.log(data)
             response.send(data)
  
         })

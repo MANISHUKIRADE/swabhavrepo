@@ -5,26 +5,34 @@ mongoose.connect(url,{useNewUrlParser:true})
 
 let userSchema = new mongoose.Schema({
   name: {
-    fname: String,
-    lname: String
+      fname: String,
+      lname: String
   },
   username: String,
   password: String,
   mobileno: String,
   registerdate: Date,
+  userStatus: {
+      type: Boolean,
+      default: true
+  },
   Task: [{
-    tasktitle: String,
-    taskdiscription: String,
-    taskcreated: Date,
-    taskDate: Date,
-    subtask: [{
+      priority: String,
       tasktitle: String,
       taskdiscription: String,
       taskcreated: Date,
-      taskDate: Date
-    }]
+      taskDate: Date,
+//      status: Boolean,
+
+      subtask: [{
+          priority: String,
+          tasktitle: String,
+          taskdiscription: String,
+          taskcreated: Date,
+          taskDate: Date,
+  //        status: Boolean
+      }]
   }]
-  
 
 })
 let userModel = mongoose.model('User', userSchema)
@@ -40,13 +48,14 @@ async function getUsers() {
 }
 async function autheticateUser(username,password){
   let data;
-  await userModel.find({username:username,password:password},{'_id':true},(err,res)=>{
+  await userModel.find({username:username,password:password},{'_id':true,'userStatus':true},(err,res)=>{
     if(err) throw err;
     //console.log(res)
     data=res;
   })
   return data;
 }
+
 
 async function getUserlogin(id) {
   let data;
