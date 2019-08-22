@@ -114,7 +114,7 @@ module.exports = {
         _id: 0
       }
     }], (err, res) => {
-      if (err) throw err
+     // if (err) throw err
 
       data = res;
     })
@@ -137,7 +137,7 @@ module.exports = {
         'Task.$.taskDate': taskDate
       }
     }, (err, res) => {
-      if (err) throw err;
+      //if (err) throw err;
       data = res;
 
     })

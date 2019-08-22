@@ -151,7 +151,8 @@ module.exports = class Usercontroller {
         })
         this.app.get('/api/v1/user/:userid/', async (request, response) => {
             let id = request.params.userid;
-            
+           console.log( request.user)
+           console.log('.....')
             let data = await getUser(id)
             response.send(data)
         })
@@ -160,7 +161,7 @@ module.exports = class Usercontroller {
             let lname = request.body.lname
             let username = request.body.username
             let password = request.body.password
-            let mobileno = request.body.mobileno
+            let mobileno = requZest.body.mobileno   ``
          let data=service.addUser(fname, lname, username, password, mobileno)
          response.send(data)
         })

@@ -2,12 +2,15 @@
   "name": "task-manger",
   "version": "1.0.0",
   "description": "login and Res=gistration page",
-  "main": "index.js",
+  "main": "app.js",
+  "start": "node app.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
     "firebase": "^6.3.5",
+    "heroku": "^7.27.1",
     "mogodb": "0.0.1-security",
     "mongoclient": "^1.0.3",
     "mongodb": "^3.3.0-beta2",
@@ -20,5 +23,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MANISHUKIRADE/task-manger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MANISHUKIRADE/task-manger/issues"
+  },
+  "homepage": "https://github.com/MANISHUKIRADE/task-manger#readme"
 }
