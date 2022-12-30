@@ -5,7 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "chi": "^0.0.10",
-    "mocha": "^6.1.4"
+    "mocha": "^10.2.0"
   },
   "devDependencies": {},
   "scripts": {
